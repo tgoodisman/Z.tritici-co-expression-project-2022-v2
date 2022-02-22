@@ -324,7 +324,7 @@ for (i in 1:length(Eigengene.list)) {
        stat_boxplot(geom ='errorbar', width = 0.4, lwd = 0.4, show.legend = FALSE, alpha = 0.9) +
        geom_boxplot(show.legend = FALSE, lwd = 0.4, 
                     fill = MEs.tochange.df$MEcolour[MEs.tochange.df$moduleNumber == MEs.ME], 
-                    alpha = 0.9) +
+                    alpha = 0.9, outlier.size = 0.5) +
        geom_signif(annotations = signifFunc3(B.vs.A$adj.P.Val[B.vs.A$MEs == MEs.ME]), 
          xmin = c(1.02), xmax = c(1.98), y_position = 0.29, tip_length = 0, 
          textsize = 4, vjust = 0.3) +
@@ -352,7 +352,7 @@ for (i in 1:length(Eigengene.list)) {
        stat_boxplot(geom ='errorbar', width = 0.4, lwd = 0.4, show.legend = FALSE, alpha = 0.9) +
        geom_boxplot(show.legend = FALSE, lwd = 0.4, 
                     fill = MEs.tochange.df$MEcolour[MEs.tochange.df$moduleNumber == MEs.ME], 
-                    alpha = 0.9) +
+                    alpha = 0.9, outlier.size = 0.5) +
        geom_signif(annotations = signifFunc3(B.vs.A$adj.P.Val[B.vs.A$MEs == MEs.ME]), 
          xmin = c(1.02), xmax = c(1.98), y_position = 0.25, tip_length = 0, 
          textsize = 4, vjust = 0.3) +
@@ -380,7 +380,7 @@ for (i in 1:length(Eigengene.list)) {
        stat_boxplot(geom ='errorbar', width = 0.4, lwd = 0.4, show.legend = FALSE, alpha = 0.9) +
        geom_boxplot(show.legend = FALSE, lwd = 0.4, 
                     fill = MEs.tochange.df$MEcolour[MEs.tochange.df$moduleNumber == MEs.ME], 
-                    alpha = 0.9) +
+                    alpha = 0.9, outlier.size = 0.5) +
        geom_signif(annotations = signifFunc3(B.vs.A$adj.P.Val[B.vs.A$MEs == MEs.ME]), 
          xmin = c(1.02), xmax = c(1.98), y_position = 0.31, tip_length = 0, 
          textsize = 4, vjust = 0.3) +
@@ -402,7 +402,7 @@ for (i in 1:length(Eigengene.list)) {
        stat_boxplot(geom ='errorbar', width = 0.4, lwd = 0.4, show.legend = FALSE, alpha = 0.9) +
        geom_boxplot(show.legend = FALSE, lwd = 0.4, 
                     fill = MEs.tochange.df$MEcolour[MEs.tochange.df$moduleNumber == MEs.ME], 
-                    alpha = 0.9) +
+                    alpha = 0.9, outlier.size = 0.5) +
        geom_signif(annotations = signifFunc3(B.vs.A$adj.P.Val[B.vs.A$MEs == MEs.ME]), 
          xmin = c(1.02), xmax = c(1.98), y_position = 0.31, tip_length = 0, 
          textsize = 4, vjust = 0.3) +
@@ -427,7 +427,7 @@ for (i in 1:length(Eigengene.list)) {
        stat_boxplot(geom ='errorbar', width = 0.4, lwd = 0.4, show.legend = FALSE, alpha = 0.9) +
        geom_boxplot(show.legend = FALSE, lwd = 0.4, 
                     fill = MEs.tochange.df$MEcolour[MEs.tochange.df$moduleNumber == MEs.ME], 
-                    alpha = 0.9) +
+                    alpha = 0.9, outlier.size = 0.5) +
        geom_signif(annotations = signifFunc3(B.vs.A$adj.P.Val[B.vs.A$MEs == MEs.ME]), 
          xmin = c(1.02), xmax = c(1.98), y_position = 0.29, tip_length = 0, 
          textsize = 4, vjust = 0.3) +
@@ -455,7 +455,7 @@ for (i in 1:length(Eigengene.list)) {
        stat_boxplot(geom ='errorbar', width = 0.4, lwd = 0.4, show.legend = FALSE, alpha = 0.9) +
        geom_boxplot(show.legend = FALSE, lwd = 0.4, 
                     fill = MEs.tochange.df$MEcolour[MEs.tochange.df$moduleNumber == MEs.ME], 
-                    alpha = 0.9) +
+                    alpha = 0.9, outlier.size = 0.5) +
        geom_signif(annotations = signifFunc3(B.vs.A$adj.P.Val[B.vs.A$MEs == MEs.ME]), 
          xmin = c(1.02), xmax = c(1.98), y_position = 0.21, tip_length = 0, 
          textsize = 4, vjust = 0.3) +
@@ -506,10 +506,10 @@ jpeg(file = "Plots/Mboxplots/Global/MgridDissertationBC.jpeg", width = 700, heig
   p4 = plot_grid(p2, p3, NULL, ncol=1)
   ggdraw(add_sub(p4, "Infection Stage", y = 0, vjust = -1.2, size = 13))
 dev.off()
-jpeg(file = "Plots/Mboxplots/Global/MgridDissertation.jpeg", width = 450, height = 1000, res = 100)
+jpeg(file = "Plots/Mboxplots/Global/MgridDissertation.jpeg", width = 468, height = 950, res = 100)
   p5 = plot_grid(p1, p4, ncol=1)
   p6 = add_sub(p5, "Infection Stage", vpadding=grid::unit(0, "lines"), y = 0, x= 1, 
-               vjust = -13, hjust = 2.5, size = 12.5)
+               vjust = -12.4, hjust = 2.4, size = 12.5)
   ggdraw(p6)
 dev.off()
 ```
