@@ -999,7 +999,7 @@ for (i in 1:4) {
 
 # Find tables with significant data and pull out these modules
 pycnidia.A = read.table("Tables/gene_significance/stage_A/pycnidia_A.csv", header = T, sep = ",")
-pycnidia.B = read.table("Tables/gene_significance/stage_B/necrosis_B.csv", header = T, sep = ",")
+pycnidia.B = read.table("Tables/gene_significance/stage_B/pycnidia_B.csv", header = T, sep = ",")
 necrosisLvl.B = read.table("Tables/gene_significance/stage_B/necrosisLvl_B.csv", header = T, sep = ",")
 earlyOnset.B = read.table("Tables/gene_significance/stage_B/earlyOnset_B.csv", header = T, sep = ",")
 necrosis.C = read.table("Tables/gene_significance/stage_C/necrosis_C.csv", header = T, sep = ",")
