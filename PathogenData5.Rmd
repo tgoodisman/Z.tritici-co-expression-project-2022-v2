@@ -905,7 +905,7 @@ for (i in 1:4) {
         kIM.reorder$kWithin[rownames(GS.A.subset.df)[x] == rownames(kIM.reorder)]
     }
   }
-  GS.A.subset.df.noGrey = GS.A.subset.df[!GS.A.subset.df$module == "ME0",]
+  GS.A.subset.df.noGrey = GS.A.subset.df[!GS.A.subset.df$module == "M0",]
   GS.A.subset.df.noGrey.reorder = GS.A.subset.df.noGrey[order(GS.A.subset.df.noGrey$module, -GS.A.subset.df.noGrey$kWithin),]
   write.csv(GS.A.subset.df.noGrey.reorder, file = paste("Tables/gene_significance/stage_A/", outcomes.list[i],"A.csv", sep = ""), row.names = T)
 }
@@ -933,7 +933,7 @@ for (i in 1:4) {
         kIM.reorder$kWithin[rownames(GS.B.subset.df)[x] == rownames(kIM.reorder)]
     }
   }
-  GS.B.subset.df.noGrey = GS.B.subset.df[!GS.B.subset.df$module == "ME0",]
+  GS.B.subset.df.noGrey = GS.B.subset.df[!GS.B.subset.df$module == "M0",]
   GS.B.subset.df.noGrey.reorder = GS.B.subset.df.noGrey[order(GS.B.subset.df.noGrey$module, -GS.B.subset.df.noGrey$kWithin),]
   write.csv(GS.B.subset.df.noGrey.reorder, file = paste("Tables/gene_significance/stage_B/", outcomes.list[i],"B.csv", sep = ""), row.names = T)
 }
@@ -961,7 +961,7 @@ for (i in 1:4) {
         kIM.reorder$kWithin[rownames(GS.C.subset.df)[x] == rownames(kIM.reorder)]
     }
   }
-  GS.C.subset.df.noGrey = GS.C.subset.df[!GS.C.subset.df$module == "ME0",]
+  GS.C.subset.df.noGrey = GS.C.subset.df[!GS.C.subset.df$module == "M0",]
   GS.C.subset.df.noGrey.reorder = GS.C.subset.df.noGrey[order(GS.C.subset.df.noGrey$module, -GS.C.subset.df.noGrey$kWithin),]
   write.csv(GS.C.subset.df.noGrey.reorder, file = paste("Tables/gene_significance/stage_C/", outcomes.list[i],"C.csv", sep = ""), row.names = T)
 }
@@ -989,7 +989,7 @@ for (i in 1:4) {
         kIM.reorder$kWithin[rownames(GS.D.subset.df)[x] == rownames(kIM.reorder)]
     }
   }
-  GS.D.subset.df.noGrey = GS.D.subset.df[!GS.D.subset.df$module == "ME0",]
+  GS.D.subset.df.noGrey = GS.D.subset.df[!GS.D.subset.df$module == "M0",]
   GS.D.subset.df.noGrey.reorder = GS.D.subset.df.noGrey[order(GS.D.subset.df.noGrey$module, -GS.D.subset.df.noGrey$kWithin),]
   write.csv(GS.D.subset.df.noGrey.reorder, file = paste("Tables/gene_significance/stage_D/", outcomes.list[i],"D.csv", sep = ""), row.names = T)
 }
@@ -998,8 +998,8 @@ for (i in 1:4) {
 #### TABLES OF IDENTIFIED SIGNIFICANT GENES ####
 
 # Find tables with significant data and pull out these modules
-pycnidia.A = read.table("Tables/gene_significance/stage_B/necrosis_B.csv", header = T, sep = ",")
-pycnidia.B = read.table("Tables/gene_significance/stage_B/pycnidia_B.csv", header = T, sep = ",")
+pycnidia.A = read.table("Tables/gene_significance/stage_A/pycnidia_A.csv", header = T, sep = ",")
+pycnidia.B = read.table("Tables/gene_significance/stage_B/necrosis_B.csv", header = T, sep = ",")
 necrosisLvl.B = read.table("Tables/gene_significance/stage_B/necrosisLvl_B.csv", header = T, sep = ",")
 earlyOnset.B = read.table("Tables/gene_significance/stage_B/earlyOnset_B.csv", header = T, sep = ",")
 necrosis.C = read.table("Tables/gene_significance/stage_C/necrosis_C.csv", header = T, sep = ",")
@@ -1009,21 +1009,21 @@ earlyOnset.C = read.table("Tables/gene_significance/stage_C/earlyOnset_C.csv", h
 pycnidia.D = read.table("Tables/gene_significance/stage_D/pycnidia_D.csv", header = T, sep = ",")
 
 # Extract specific modules
-pycnidia.A.ME24 = pycnidia.A[pycnidia.A$module == "ME24",]
-pycnidia.B.ME24 = pycnidia.B[pycnidia.B$module == "ME24",]
-necrosisLvl.B.ME13 = necrosisLvl.B[necrosisLvl.B$module == "ME13",]
-earlyOnset.B.ME13 = earlyOnset.B[earlyOnset.B$module == "ME13",]
-necrosis.C.ME13 = necrosis.C[necrosis.C$module == "ME13",]
-pycnidia.C.ME24 = pycnidia.C[pycnidia.C$module == "ME24",]
-necrosisLvl.C.ME6 = necrosisLvl.C[necrosisLvl.C$module == "ME6",]
-earlyOnset.C.ME6 = earlyOnset.C[earlyOnset.C$module == "ME6",]
-necrosisLvl.C.ME13 = necrosisLvl.C[necrosisLvl.C$module == "ME13",]
-earlyOnset.C.ME13 = earlyOnset.C[earlyOnset.C$module == "ME13",]
-pycnidia.D.ME24 = pycnidia.D[pycnidia.D$module == "ME24",]
+pycnidia.A.ME24 = pycnidia.A[pycnidia.A$module == "M24",]
+pycnidia.B.ME24 = pycnidia.B[pycnidia.B$module == "M24",]
+necrosisLvl.B.ME13 = necrosisLvl.B[necrosisLvl.B$module == "M13",]
+earlyOnset.B.ME13 = earlyOnset.B[earlyOnset.B$module == "M13",]
+necrosis.C.ME13 = necrosis.C[necrosis.C$module == "M13",]
+pycnidia.C.ME24 = pycnidia.C[pycnidia.C$module == "M24",]
+necrosisLvl.C.ME6 = necrosisLvl.C[necrosisLvl.C$module == "M6",]
+earlyOnset.C.ME6 = earlyOnset.C[earlyOnset.C$module == "M6",]
+necrosisLvl.C.ME13 = necrosisLvl.C[necrosisLvl.C$module == "M13",]
+earlyOnset.C.ME13 = earlyOnset.C[earlyOnset.C$module == "M13",]
+pycnidia.D.ME24 = pycnidia.D[pycnidia.D$module == "M24",]
 
 # Make list of tables
 signif.list = list(pycnidia.A.ME24, pycnidia.B.ME24, necrosisLvl.B.ME13, earlyOnset.B.ME13, necrosis.C.ME13, pycnidia.C.ME24, necrosisLvl.C.ME6, earlyOnset.C.ME6, necrosisLvl.C.ME13, earlyOnset.C.ME13, pycnidia.D.ME24)
-signif.names.list  = list("pycnidia.A.ME24", "pycnidia.B.ME24", "necrosisLvl.B.ME13", "earlyOnset.B.ME13", "necrosis.C.ME13", "pycnidia.C.ME24", "necrosisLvl.C.ME6", "earlyOnset.C.ME6", "necrosisLvl.C.ME13", "earlyOnset.C.ME13", "pycnidia.D.ME24")
+signif.names.list  = list("pycnidia.A.M24", "pycnidia.B.M24", "necrosisLvl.B.M13", "earlyOnset.B.M13", "necrosis.C.M13", "pycnidia.C.M24", "necrosisLvl.C.M6", "earlyOnset.C.M6", "necrosisLvl.C.M13", "earlyOnset.C.M13", "pycnidia.D.M24")
 new.signif.list = list()
 # signif values
 for (x in 1:length(signif.list)) {
