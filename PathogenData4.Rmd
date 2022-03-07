@@ -289,7 +289,7 @@ for (i in 1:length(Eigengene.list)) {
   
   ## PRINT & SAVE EACH ME BOXPLOT, AND SAVE TO LIST ##
   jpegME(MEs.ME)
-  # Convert each ggplot to ggplotgrob and add to list
+  # Add each ggplot to list
    global.ME.list[[i]] = print(ggplot(
      MEs.eigengene.df, aes(x=MEs.stage.vector, y=MEs.eigengene.vector)) +
        stat_boxplot(geom ='errorbar', width = 0.4, lwd = 0.8, show.legend = FALSE, alpha = 0.9) +
