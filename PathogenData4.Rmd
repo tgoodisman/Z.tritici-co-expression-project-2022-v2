@@ -317,6 +317,30 @@ for (i in 1:length(Eigengene.list)) {
            } )
    dev.off()
    
+   ## PRESENTATION FIGURE M13 ##
+   if (i == 9) {
+   powerpoint.list[[1]] = print(ggplot(
+     MEs.eigengene.df, aes(x=MEs.stage.vector, y=MEs.eigengene.vector)) +
+       stat_boxplot(geom ='errorbar', width = 0.4, lwd = 0.6, show.legend = FALSE, alpha = 0.9) +
+       geom_boxplot(show.legend = FALSE, lwd = 0.6, 
+                    fill = MEs.tochange.df$MEcolour[MEs.tochange.df$moduleNumber == MEs.ME], 
+                    alpha = 0.9, outlier.size = 2) +
+       geom_signif(annotations = signifFunc(B.vs.A$adj.P.Val[B.vs.A$MEs == MEs.ME]), 
+         xmin = c(1.02), xmax = c(1.98), y_position = 0.2, tip_length = 0, 
+         textsize = 3.2, vjust = -0.1) +
+       geom_signif(annotations = signifFunc(C.vs.B$adj.P.Val[C.vs.B$MEs == MEs.ME]), 
+         xmin = c(2.02), xmax = c(2.98), y_position = 0.2, tip_length = 0, 
+         textsize = 3.2, vjust = -0.1) +
+       geom_signif(annotations = signifFunc(D.vs.C$adj.P.Val[D.vs.C$MEs == MEs.ME]), 
+         xmin = c(3.02), xmax = c(3.98), y_position = 0.2, tip_length = 0, 
+         textsize = 3.2, vjust = -0.1) +
+       ggtitle(MEs.ME) +
+       xlab("Infection stages") +
+       scale_y_continuous(name = "Eigengene expression", limits = c(-0.8, 0.3), 
+                          breaks = seq(-0.8, 0.3, by =0.1))
+     )
+   }
+   
    ## DISSERTATION FIGURES ##
    if (i == 4 | i == 8 | i == 9) {
    dissertation.list.a[[a1]] = print(ggplot(
@@ -487,6 +511,12 @@ dev.off()
 jpeg(file = "Plots/Mboxplots/Global/Mgrid[10-18].jpeg", width = 700, height = 700, res = 85)
 plot = plot_grid(plotlist = global.ME.list[10:18], ncol = 3)
   ggdraw(add_sub(plot, "Infection Stage", y = 0, vjust = -1.2, size = 13))
+dev.off()
+
+# Presentation Figure
+jpeg(file = "Plots/Mboxplots/Global/MgridPowerpoint.jpeg", width = 500, height = 500, res = 125)
+p1 = plot_grid(plotlist = powerpoint.list)
+  ggdraw(p1)
 dev.off()
 
 # Dissertation Figure Formation
@@ -910,6 +940,15 @@ for (i in 1:length(Eigengene.list)) {
 }
 
 # normCounts Dissertation Figures #
+# Powerpoint M24A-D
+powerpointM24.list = dissertation.normCounts.list[[3]]
+jpeg(file = "Plots/Mboxplots/normalizedCounts/MEPowerpointM24A-D.jpeg", 
+     width = 700, height = 500, res = 120)
+plot1 = plot_grid(powerpointM24.list)
+plot2 = add_sub(plot1, "Isolates", y = 0, vjust = -1.5, size = 10.5)
+ggdraw(plot2)
+dev.off()
+
 # Figure 3
 jpeg(file = "Plots/Mboxplots/normalizedCounts/MEDissertation3.jpeg", 
      width = 600, height = 620, res = 100)

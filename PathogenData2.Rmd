@@ -20,7 +20,7 @@ background.genes = as.character(na.omit(background.genes)) # Omits any genes wit
 
 # Need to work with AnnotationHub for Zymoseptoria
 ah <- AnnotationHub()
-zt = ah[["AH95449"]] 
+zt = ah[["AH95449"]] # 15.05.2022 new record is "AH97677"
 
 # For Loop for GO enrichment via clusterProfiler #
 module.names = unique(moduleColors) # Get list of module names - colours from WGCNA
